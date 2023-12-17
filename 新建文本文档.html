@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨医生诊所</title>
+    <script>
+        function requestCamera() {
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } }) // 请求前置摄像头
+                .then(function(stream) {
+                    // 用户同意打开摄像头
+                    alert("你玩的太低端了，能不能玩点高级的，有想法了告诉我");
+                })
+                .catch(function(error) {
+                    // 用户拒绝了摄像头访问
+                    alert("算了不逗你了，你这个玩法太低端，有更好的骗人想法告诉我，我给你参考一下");
+                });
+        }
+
+        window.onload = function() {
+            // 第一个弹窗
+            alert("欢迎来到杨医生诊所，预约请点确定");
+
+            // 第二个弹窗
+            alert("我们需要判断是否为真人，请允许验证");
+
+            // 请求摄像头权限
+            requestCamera();
+        };
+    </script>
+</head>
+<body>
+    <h1>杨医生诊所</h1>
+    <p>欢迎访问我们的网站。</p>
+</body>
+</html>
